@@ -17,8 +17,8 @@
     @yield('head')
 </head>
 
-<body class="font-sans antialiased dark:bg-black dark:text-white/50">
-    <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50 p-12">
+<body class="font-sans antialiased dark:bg-neutral-900 dark:text-white/50">
+    <div class="bg-gray-50 text-black/50 dark:bg-neutral-900 dark:text-white/50 p-12">
         {{ $slot }}
     </div>
 

@@ -2,7 +2,6 @@
 
 use function Livewire\Volt\{state};
 
-$save = function () {};
 ?>
 
 @section('head')
@@ -10,18 +9,20 @@ $save = function () {};
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet" />
 @endsection
 
-<form class="flex flex-col space-y-6" wire:submit='save'>
+<form class="flex flex-col space-y-6" action="{{ route('storePost') }}" method="POST">
+    @csrf
     <div class="flex flex-col space-y-2">
         <label>Title</label>
-        <input type="text" placeholder="Title..." class="px-3 py-2 rounded" />
+        <input type="text" name='title' placeholder="Title..." class="px-3 py-2 rounded dark:bg-neutral-700" />
     </div>
 
     <div class="flex flex-col space-y-2">
         <label>Description</label>
-        <input type="text" placeholder="Description..." class="px-3 py-2 rounded" />
+        <input type="text" name='description' placeholder="Description..."
+            class="px-3 py-2 rounded dark:bg-neutral-700" />
     </div>
 
-    <input type="file" name="image"/>
+    <input type="file" name="image" />
 
     <button type="submit" class="rounded bg-green-600 hover:bg-green-500 px-2 py-1">Save</button>
 </form>
